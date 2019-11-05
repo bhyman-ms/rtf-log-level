@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:rtf-log-level="http://www.mulesoft.org/schema/mule/rtf-log-level"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/rtf-log-level http://www.mulesoft.org/schema/mule/rtf-log-level/current/mule-rtf-log-level.xsd">
+
+    <rtf-log-level:config name="config" configId="configId">
+        <rtf-log-level:connection requiredParameter="aValue" />
+    </rtf-log-level:config>
+
+    <flow name="sayHiFlow">
+        <rtf-log-level:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <rtf-log-level:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>
