@@ -26,10 +26,10 @@ public class RtfloglevelConfiguration implements Initialisable {
   @Example("MULE_LOG_LEVEL@")
   @DisplayName("Property Prepender")
   @Summary("Identifies the property prepender string that indicates the property is intended to be used to set dynamic log levels")
-  private String proprtyPrepender;
+  private String propertyPrepender;
 
   public String getPropertyPrepender(){
-    return proprtyPrepender;
+    return propertyPrepender;
   }
 
   private static final Logger LOGGER = LoggerFactory.getLogger("org.mule.runtime.core.internal.processor.LoggerMessageProcessor");
@@ -38,9 +38,9 @@ public class RtfloglevelConfiguration implements Initialisable {
 
       for(String propertyName : System.getProperties().stringPropertyNames())
       {
-          if (propertyName.startsWith(this.proprtyPrepender)) {
+          if (propertyName.startsWith(this.propertyPrepender)) {
 
-              String loggerName = propertyName.substring(this.proprtyPrepender.length());
+              String loggerName = propertyName.substring(this.propertyPrepender.length());
               String levelName = System.getProperty(propertyName, "");
               Level level = Level.toLevel(levelName); // defaults to DEBUG
               if (!"".equals(levelName) && !levelName.toUpperCase().equals(level.toString())) {

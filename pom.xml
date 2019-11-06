@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mulesoft.consulting</groupId>
     <artifactId>rtf-log-level</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <packaging>mule-extension</packaging>
     <name>Rtf-log-level Extension</name>
 
