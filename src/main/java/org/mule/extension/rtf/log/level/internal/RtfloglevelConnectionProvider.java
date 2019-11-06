@@ -23,23 +23,10 @@ public class RtfloglevelConnectionProvider implements PoolingConnectionProvider<
 
   private final Logger LOGGER = LoggerFactory.getLogger(RtfloglevelConnectionProvider.class);
 
- /**
-  * A parameter that is always required to be configured.
-  */
-  @Parameter
-  private String requiredParameter;
-
- /**
-  * A parameter that is not required to be configured by the user.
-  */
-  @DisplayName("Friendly Name")
-  @Parameter
-  @Optional(defaultValue = "100")
-  private int optionalParameter;
 
   @Override
   public RtfloglevelConnection connect() throws ConnectionException {
-    return new RtfloglevelConnection(requiredParameter + ":" + optionalParameter);
+    return new RtfloglevelConnection("");
   }
 
   @Override
