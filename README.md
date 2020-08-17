@@ -31,7 +31,7 @@ Add this dependency to your mule application's pom.xml
 <dependency>
     <groupId>com.mulesoft.consulting</groupId>
     <artifactId>rtf-log-level</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.7</version>
     <classifier>mule-plugin</classifier>
 </dependency>
 ```
