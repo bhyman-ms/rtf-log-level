@@ -35,31 +35,14 @@ Add this dependency to your mule application's pom.xml
     <classifier>mule-plugin</classifier>
 </dependency>
 ```
-This will install the extension in your Mule application. You only need to configure
-one value to enable the extension. To enable the extension add a global configuration
-property **Rtf-log-level** to the project.  
+This will install the extension in your Mule application. You do not need to do anything else.
 
-To add this property, navigate to the *Global Elements* tab of your Mule application xml
-and click **Create**. Search for the *Rtf-log-level Config* property and hit enter. You must 
-provide the string to be searched for by the extension that indicates that the property is intended
-to be used for setting log levels. For example, a Property Prepender configured as **MULE_LOG_LEVEL@** indicates that the 
-extension will search for any property that starts with the String **MULE_LOG_LEVEL@** and then extract the remainder of
-its property key to identify which logger to change. 
-
-Alternatively, you can simply include this XML snippet in your Mule application config file:
-```xml
-<rtf-log-level:config name="Rtf_log_level_Config" doc:name="Rtf-log-level Config" propertyPrepender="MULE_LOG_LEVEL@" />
-```
-Change the *propertyPrepender* attribute to whatever value is desired.
 #### Example Usage
-The Mule admin wants to turn on HTTP wire tracing for a period of time. The Mule applications
-that are deployed all have the *Rtf-log-level* extension configured with the
-Property Prepender attribute set to **MULE_LOG_LEVEL@**. To enable HTTP wire logging in a mule application you need
-to set the logger named *org.mule.service.http.impl.service.HttpMessageLogger* to DEBUG. To
-enable this logger simply use ARM set a property for the mule application 
-as follows:
+On startup the Mule application looks for the properties that start 
+with *logging.level.* and enable the log level for those components. This only happens at startup, so changing the propert requires an application 
+restart for now. If for example the Mule admin wants to turn on HTTP wire tracing for a period of time, simply set a property for the mule application as follows:
 ```
-MULE_LOG_LEVEL@org.mule.service.http.impl.service.HttpMessageLogger=DEBUG
+logging.level.org.mule.service.http.impl.service.HttpMessageLogger=DEBUG
 ```
 You can use this technique to dynamically set any logger's level.
 
