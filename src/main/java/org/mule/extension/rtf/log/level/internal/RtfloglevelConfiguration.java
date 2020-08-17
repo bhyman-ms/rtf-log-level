@@ -22,11 +22,12 @@ import org.slf4j.LoggerFactory;
 public class RtfloglevelConfiguration implements Initialisable {
 
 
-  @Parameter
-  @Example("MULE_LOG_LEVEL@")
-  @DisplayName("Property Prepender")
-  @Summary("Identifies the property prepender string that indicates the property is intended to be used to set dynamic log levels")
-  private String propertyPrepender;
+  //@Parameter
+  //@Optional(defaultValue="logging.level.")
+  //@Example("logging.level.")
+  //@DisplayName("Property Prepender")
+  //@Summary("Identifies the property prepender string that indicates the property is intended to be used to set dynamic log levels")
+  private String propertyPrepender = "logging.level.";
 
   public String getPropertyPrepender(){
     return propertyPrepender;

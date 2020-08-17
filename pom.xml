@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.mulesoft.consulting</groupId>
     <artifactId>rtf-log-level</artifactId>
-    <version>1.0.5</version>
+    <version>1.0.7</version>
     <packaging>mule-extension</packaging>
     <name>Rtf-log-level Extension</name>
 
@@ -19,7 +19,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
-            <version>2.10.0</version>
+            <version>2.13.2</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
